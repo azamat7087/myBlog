@@ -8,8 +8,8 @@ class TagForm(forms.ModelForm):
         model = Tag
         fields = ['title', 'slug']
 
-        widgets = { 'title' : forms.TextInput(attrs={'class' : 'form-control'}),
-                    'slug' : forms.TextInput(attrs={'class' : 'form-control'}),}
+        widgets = {'title': forms.TextInput(attrs={'class': 'form-control'}),
+                   'slug': forms.TextInput(attrs={'class': 'form-control'}), }
 
 
     def clean_slug(self):
