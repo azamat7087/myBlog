@@ -1,6 +1,7 @@
 from django import forms
 from .models import Tag, Post
 from django.core.exceptions import ValidationError
+from django_summernote.widgets import SummernoteWidget
 
 class TagForm(forms.ModelForm):
 
@@ -30,7 +31,7 @@ class PostForm(forms.ModelForm):
 
         widgets = {'title': forms.TextInput(attrs={'class': 'form-control'}),
                    'slug': forms.TextInput(attrs={'class': 'form-control'}),
-                   'body': forms.Textarea(attrs={'class': 'form-control'}),
+                   'body': SummernoteWidget(),
                    'tags': forms.SelectMultiple(attrs={'class': 'form-control'}),
                    }
 
